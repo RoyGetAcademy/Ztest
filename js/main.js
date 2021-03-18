@@ -63,7 +63,7 @@ function updateNow()
         document.getElementById("abou").style.color="#07f5e2";
         document.getElementById("main").innerHTML=`
         <div id="one">
-<h1><u>About us:</u></h1>        
+<h3><u>About us:</u></h3>        
 <pre>
 I am a Norwegian dude who likes to geek it out.
 I program games, websites & I am a gamer.
@@ -134,8 +134,9 @@ Zhenis Evolutions started getting made january 2021.
         document.getElementById("main").innerHTML=`
         <div id="one">
             <h1>Contact</h1>
-            <div><p>Navn:</p><input type="text"  id="navn"  placeholder= "Ditt navn"> </input> </div>
-            <div><p>Epost:</p> <input type="email" id="epost" placeholder= "Din Epost"> </input> </div>
+            <p>Navn:</p><input type="text"  id="navn"  placeholder= "Ditt navn"> </input><br>
+            <p>Epost:</p> <input type="email" id="epost" placeholder= "Din Epost"> </input><br>
+            
             <button id="submit">Send</button>
         </div>
         `;

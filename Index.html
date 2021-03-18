@@ -11,7 +11,10 @@
         <link rel="stylesheet" href="css/main.css"><!-----------------MAIN CSS IS HERE!!------------------>
     </head>
     <body>
+        
         <div class="wrapper">
+            <img class="middle" id="ImgLeft"  src="images/ZhenisLong.png">
+            <img class="middle" id="ImgRight" src="images/ZhenisLong.png">
             <!-----------------HEADER IS HERE!!------------------> 
             <div id="header">
                 <div id="Hleft">
@@ -26,6 +29,7 @@
                 <div id="Hmiddle">
                     <img id="headerImage" src="images/ZhenisLogo.png" alt="Zhenis Tech"><!--Change this later-->
                 </div>
+                
                 <nav>
                     <ul id="HovedMeny">
                         <li><a id="home" onclick="clickMain()" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">Home</a></li>
@@ -40,11 +44,13 @@
             <!-----------------FOOTER IS HERE!!------------------>
             <footer id="footer">
                 <div id="leftFooter">
-                    <h3>News</h3>
-                    <p>3/17/2021- Started new site</p>
+                    <p><u>Login:</u></p>
+                    <input type="text"     id="User" placeholder="Username"></input>
+                    <input type="password" id="Pass" placeholder="Password"></input>
+                    
                 </div>
                 <div id="middleFooter">
-                    <p>&#169; 2020<br>Zhenis Technologies</p>
+                    <br><br><p>&#169; 2020<br>Zhenis Technologies</p>
                 </div>
                 <div id="rightFooter">
                     <img id="RightFooterPic" src="images/ZMiniLogo.png">
