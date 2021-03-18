@@ -1,61 +1,222 @@
 body{
-    margin:0.5em auto;
-    width:1024px;
+    width:100%;    
+    background-color:black;
+}
+/*--------Wrapper dekker alt.------*/
+.wrapper{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:60%;
+    text-align: center;
+    font-size:2em;
+    /*background-image: url(/Ztest/images/Front_Tex.png);*/
 }
 
-
-
+/*--------headerLeft og middle.------*/
 #header{
-    margin:0.25em auto;
+    border-top:5px solid #07f5e2;
+    border-bottom:5px solid #07f5e2;
+    border-radius:5%;
 }
-
-#headerImage{
-    border: 0.2em solid teal;
-    border-radius: 15%;
-}
-
-nav{
-    display:table;
-    position: absolute;
-    top: 205px;
-    width:1024px;
-    left:auto;
-    right:auto;
-    margin:0 auto;
-}
-nav li, nav li a{
+#Hleft, #Hmiddle{
     display:inline-block;
+}
+#Hleft{
+    float:left;
+}
+/*--------Bilder på header.------*/
+#headerImage{
+    height:450px;
+    position:center;
+}
+/*--------List på venstre side med lenker.------*/
+#HeadLeftList li, #HeadLeftList li a{
+    display:block;
+    font-style:none;
+    text-decoration:none;
+    list-style-type:none;
+    text-align:center;
+    color:teal;
+    border-radius:10%;
+    font-size:1.2em;
+    margin:0.2em;
+}
+#HovedMeny li a:hover{
+    color:#07f5e2;
+}
+#HeadLeftList{
+    position:absolute;
+}
+#HeadLeftList li a:hover{
+    color:#07f5e2;
+}
+/*--------HovedMeny------*/
+#HovedMeny li, #HovedMeny li a{
+    display:inline;
+    font-style:none;
+    text-decoration:none;
+    list-style-type:none;
+    text-align:center;
+    color:teal;
+    border-radius:25%;
+    font-size:1.2em;
+}
+#HovedMeny li a:hover{
+    color:#07f5e2;
+}
+#HovedMeny li{
+    border-bottom:0.2em solid #07f5e2;
+    padding:0.5em;
+    margin:1em;
+}
+#HovedMeny li a{
+    height:80%;
+}
+/*--------HovedOmrådet på skjermen..------*/
+#navn, #epost{
+    background:none;
+    font-size:1em;
+}
+#submit{
+    background-color:#07f5e2;
+    padding:0.25em 0.75em;
+    margin:1em;
+    font-size:1.25em;
+}
+
+
+
+
+/*--------HovedOmrådet på skjermen..------*/
+#main{
+    margin-top:2em;
+    display:inline-block;
+    width:100%;
+    height:800px;
+}
+#left, #right{
+    border:0.3em solid #07f5e2;
+    border-radius:15%;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#07f5e2;
+}
+#topLeftPic, #bottomLeftPic{
+    height:200px;
+    position:center;
+}
+#topRightPic, #bottomRightPic{
+    height:200px;
+    position:center;
+}
+#left{
+    float:left;
+    margin-left:1em;    
+    width:40%;
+}
+#right{
+    float:right;
+    margin-right:1em;
+    width:40%;
+}
+#one{
+
     float:none;
-    font-style: none;
-    text-decoration: none;
-    list-style-type: none;
+    margin:auto auto;
+    border:0.3rem solid #07f5e2;
+    border-radius:15%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3em;
+    color:#07f5e2;
+}
+#two{
+
+    float:none;
+    margin:auto auto;
+    border:0.3em solid #07f5e2;
+    border-radius:15%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3em;
+    color:#07f5e2;
+}
+#Reset{
+    margin:5px auto;
+    border:0.2em solid #07f5e2;
+    border-radius:50%;
+    background-color:teal;
+    width:200px;
+}
+/*Game1*/
+#game1Main{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    background-color:#222;
+    padding: 1px;
+    float:left;
+    margin:2rem;
+}
+.Color1, .Color2{
+    background-color:white;
+    font-size:1.5em;
+    text-align:center;
+    padding: 1em;
+    border: 1px solid teal;
+    height:100px;
+    width:100px;
+}
+.Color2{
+    background-color:black;
+    color:white;
+}
+/*Game2*/
+#game2Main{
+    width:600px;
+    display:block;
+    background-color:#fff;
+    border:0.5rem solid #07f5e2;
+    border-radius:20%;
+    padding: 1px;
+    float:right;
+    margin: 0 2em;
+}
+#newGame{
+    border:5px solid #07f5e2;
+    border-radius:25%;
+    margin-top:1em;
+    padding:1rem;
+    font-size:2rem;
+}
+#numberGuess{
+    border:5px solid #07f5e2;
+    border-radius:25%;
+    background:transparent;
+    margin:2rem 0;
+    padding:1rem;
+    width:50%;
+    font-size:2rem;
     text-align:center;
 }
-
-#mainBody{
-    
+input[type="number"] , textarea,select, button{
+    outline:none;
 }
 
-#leftSide{
-    display:block;
-    float:left;
-    height:500px;
-    width:68%;
-    border:0.2em solid black;
+/*--------Bunnen av skjermen..------*/
+#footer{
+    width:100%;
+    margin-top:10em;
+    color:#07f5e2;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.3em;
 }
-
-#rightSide{
-    display:block;
-    float:right;
-    margin-right:-5px;
-    height:500px;
+#leftFooter, #middleFooter, #rightFooter{
+    display:inline-block;
     width:30%;
-    border:0.2em solid black;
 }
-#mainFooter{
-    float:center;
-    margin-top:530px;
-    height:50px;
-    width:1024px;
-    border: 0.2em solid black;
+#MiddleFooterPic, #LeftFooterPic, #RightFooterPic{
+    height:200px;
+    position:center;
+    border-radius:5%;
+}
+#YouWon{
+    color:teal;
 }

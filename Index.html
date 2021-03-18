@@ -11,47 +11,50 @@
         <link rel="stylesheet" href="css/main.css"><!-----------------MAIN CSS IS HERE!!------------------>
     </head>
     <body>
-        <!-----------------HEADER IS HERE!!------------------>
-        <div id="header">
-            <img id="headerImage" src="images/Zhenislogo.jpg" alt="Zhenis Tech"><!--Change this later-->
-            <div id="nav">
+        <div class="wrapper">
+            <!-----------------HEADER IS HERE!!------------------> 
+            <div id="header">
+                <div id="Hleft">
+                    <nav>
+                        <ul id="HeadLeftList">
+                            <li><a id="cont" onclick="clickContact()" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">Contact</a></li>
+                            <li><a id="disc" onclick="">Discord</a></li>
+                            <li><a id="evol"onclick="clickEvolutions()" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">Evolutions</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="Hmiddle">
+                    <img id="headerImage" src="images/ZhenisLogo.png" alt="Zhenis Tech"><!--Change this later-->
+                </div>
                 <nav>
-                    <ul id="headerList">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Games</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
+                    <ul id="HovedMeny">
+                        <li><a id="home" onclick="clickMain()" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">Home</a></li>
+                        <li><a id="game" onclick="clickGames()" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">Games</a></li>
+                        <li><a id="abou" onclick="clickAbout()" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">About</a></li>
                     </ul>
                 </nav>
             </div>
+            <!-----------------MAIN BODY IS HERE!!------------------>
+            <div id="main"></div>
+            
+            <!-----------------FOOTER IS HERE!!------------------>
+            <footer id="footer">
+                <div id="leftFooter">
+                    <h3>News</h3>
+                    <p>3/17/2021- Started new site</p>
+                </div>
+                <div id="middleFooter">
+                    <p>&#169; 2020<br>Zhenis Technologies</p>
+                </div>
+                <div id="rightFooter">
+                    <img id="RightFooterPic" src="images/ZMiniLogo.png">
+                    <p>Right Foot</p>
+                </div>
+            </footer>
         </div>
-        <!-----------------MAIN BODY IS HERE!!------------------>
-        <div id="mainBody">
-            <!--Left-->
-            <div id="leftSide">
 
-            </div>
-            <!--Right-->
-            <div id="rightSide">
-
-            </div>
-        </div>
-        <!-----------------FOOTER IS HERE!!------------------>
-        <footer id="mainFooter">
-            <!--Left-->
-            <div id="leftFooter">
-
-            </div>
-            <!--Center-->
-            <div id="centerFooter">
-
-            </div>
-            <!--Right-->
-            <div id="rightFooter">
-
-            </div>
-        </footer>
         <!-----------------SCRIPT IS HERE!!------------------>
-        <script src="" async defer></script>
+        <script src="js/main.js"></script>
+
     </body>
 </html>
