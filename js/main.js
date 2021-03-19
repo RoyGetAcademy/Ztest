@@ -164,6 +164,7 @@ function mouseOver(that)
     if(that.innerHTML=="Games")document.getElementById("game").style.color="#07f5e2";
     if(that.innerHTML=="Discord")document.getElementById("disc").style.color="#07f5e2";
     if(that.innerHTML=="Contact")document.getElementById("cont").style.color="#07f5e2";
+    if(that.innerHTML=="Evolutions")document.getElementById("evol").style.color="#07f5e2";
 }
 //når du tar vekk musen så bytter den farge hvis ikke den er valgt.
 function mouseOut(that)
@@ -173,6 +174,7 @@ function mouseOut(that)
     if(that.innerHTML=="Games" && page!="Games")document.getElementById("game").style.color="teal";
     if(that.innerHTML=="Discord" && page!="Discord")document.getElementById("disc").style.color="teal";
     if(that.innerHTML=="Contact" && page!="Contact")document.getElementById("cont").style.color="teal";
+    if(that.innerHTML=="Evolutions" && page!="Evolutions")document.getElementById("evol").style.color="teal";
 }
 //Dette er til spillet Game1 som er tick tack toe.
 function Clicked(that)
