@@ -51,13 +51,13 @@ function updateNow()
         resetColors();
         document.getElementById("home").style.color="#07f5e2";
         document.getElementById("main").innerHTML=`
-        <div id="left">
-            <img id="topLeftPic" src="images/ZMiniLogo.png">
-            <p>Left</p>
+        <div id="left" onClick="clickEvolutions()">
+            <img id="topLeftPic" src="images/ZhenisEvolutions.png">
+            <p>Zhenis Evolutions</p>
         </div>
-        <div id="right">
-            <img id="topRightPic" src="images/ZMiniLogo.png">
-            <p>Right</p>
+        <div id="right" onClick="clickEvolutions()">
+            <img id="topRightPic" src="images/ZhenisEvolutions2.png">
+            <p>Zhenis Evolutions</p>
         </div>
         `;
     }
@@ -126,7 +126,9 @@ Zhenis Evolutions started getting made january 2021.
         document.getElementById("main").innerHTML=`
         <div id="one">
             <h1><u><i>Zhenis Evolutions</i></u></h1>
-            <img id="topLeftPic" src="images/ZMiniLogo.png">
+            <img id="topPic" src="images/ZhenisEvolutions.png">
+            <img id="midPic" src="images/ZhenisEvolutions2.png">
+            <img id="botPic" src="images/ZhenisEvolutions3.png">
             <p>Info comming soon to a place near you!!</p>
         </div>
         `;
