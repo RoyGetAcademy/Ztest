@@ -154,7 +154,7 @@ function resetColors()
     document.getElementById("game").style.color="teal";
     document.getElementById("evol").style.color="teal";
     document.getElementById("cont").style.color="teal";
-    document.getElementById("disc").style.color="teal"
+    document.getElementById("disc").style.color="teal";
 }
 //bytter når du har mus over knappen
 function mouseOver(that)
