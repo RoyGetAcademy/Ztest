@@ -2,6 +2,13 @@ body{
     width:100%;    
     background-color:black;
 }
+h1{
+    font-size:2rem;
+    margin:0.2rem;
+}
+p{
+    font-size:1.2rem;
+}
 /*--------Wrapper dekker alt.------*/
 .wrapper{
     display:block;
@@ -177,13 +184,13 @@ li a{
 /*Game2*/
 #game2Main{
     z-index:5;
-    width:600px;
+    width:80%;
     display:block;
     background-color:#000;
     border:0.3rem solid #07f5e2;
     border-radius:20%;
-    padding: 1px;
-    margin:5rem auto 0;
+    padding: 1rem;
+    margin:5rem auto 2rem;
     color:#07f5e2;
 }
 #newGame{
@@ -378,5 +385,19 @@ li a{
     }
     #middleFooter{
         margin:-5rem auto;
+    }
+    /*Game1*/
+    #game1Main{
+        width:290px;
+        height: 290px;
+        margin:1 auto;
+    }
+    .Color1, .Color2{
+        height:46px;
+        width:46px;
+    }
+    /*Game2*/
+    #game2Main{
+        margin:1rem auto;
     }
 }
