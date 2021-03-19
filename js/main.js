@@ -11,7 +11,6 @@ var guesses=0;
 var low=0;
 var high=100;
 
-
 updateNow();
 //Controller
 function clickMain()
