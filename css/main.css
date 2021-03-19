@@ -32,11 +32,8 @@ body{
     border-radius:5%;
     z-index:5;
 }
-#Hleft, #Hmiddle{
+#Hmiddle{
     display:inline-block;
-}
-#Hleft{
-    float:left;
 }
 /*--------Bilder på header.------*/
 #headerImage{
@@ -156,64 +153,63 @@ body{
     font-size: 1.3em;
     color:#07f5e2;
 }
-#one{
-    
-}
-#two{
-    
-}
 #Reset{
-    margin:5px auto;
+    margin:1em auto;
     border:0.2em solid #07f5e2;
     border-radius:50%;
-    background-color:teal;
-    width:200px;
+    background-color:transparent;
+    width:150px;
+    color:#07f5e2;
+    padding:0.5em;
 }
 /*Game1*/
 #game1Main{
     z-index:5;
     display:grid;
     grid-template-columns: auto auto auto;
-    background-color:#222;
+    background-color:#07f5e2;
     padding: 1px;
-    width:400px;
-    height:400px;
+    width:455px;
+    height: 455px;
     margin:2rem auto;
+    border:0.3rem solid #07f5e2;
 }
 .Color1, .Color2{
-    background-color:white;
-    font-size:1.5em;
+    background-color:teal;
+    font-size:4em;
     text-align:center;
-    padding: 1em;
-    border: 1px solid teal;
+    padding: 0.36em;
+    border: 0.1rem solid #07f5e2;
     height:100px;
     width:100px;
 }
 .Color2{
     background-color:black;
-    color:white;
+    color:#07f5e2;
 }
 /*Game2*/
 #game2Main{
     z-index:5;
     width:600px;
     display:block;
-    background-color:#fff;
-    border:0.5rem solid #07f5e2;
+    background-color:#000;
+    border:0.3rem solid #07f5e2;
     border-radius:20%;
     padding: 1px;
-    float:right;
-    margin: 3em auto;
+    margin:5rem auto 0;
+    color:#07f5e2;
 }
 #newGame{
-    border:5px solid #07f5e2;
+    border:0.2rem solid #07f5e2;
+    background-color:transparent;
     border-radius:25%;
     margin-top:1em;
     padding:1rem;
     font-size:2rem;
+    color:#07f5e2;
 }
 #numberGuess{
-    border:5px solid #07f5e2;
+    border:0.3rem solid #07f5e2;
     border-radius:25%;
     background:transparent;
     margin:2rem 0;
@@ -222,8 +218,36 @@ body{
     font-size:2rem;
     text-align:center;
 }
-input[type="number"] , textarea,select, button{
+#game2Main input{
+    color:#07f5e2;
+}
+#game2Main input::placeholder{
+    color:rgba(7, 245, 226, 0.5);
+}
+
+/*--------Spesifikt for andre sider..------*/
+#one p{
+    margin:0.2em;
+}
+#one input, #one textarea, #one select, #one button{
     outline:none;
+    border:none;
+    border-top:2px solid #07f5e2;
+    border-bottom:2px solid #07f5e2;
+    border-radius:25%;
+    padding:1em;
+}
+
+#one input::placeholder, #one textarea::placeholder,#one select::placeholder, #one button::placeholder{
+    color:rgba(7, 245, 226, 0.5);
+}
+#one textarea{
+    width:80%;
+    height:100px;
+    background-color:transparent;
+    font-size: 1em;
+    color:#07f5e2;
+    
 }
 
 /*--------Bunnen av skjermen..------*/
@@ -255,15 +279,16 @@ input[type="number"] , textarea,select, button{
 }
 #middleFooter{
     float:center;
+    border:none;
 }
 #rightFooter{
     float:right;
     margin-right:3em;
-}
-#RightFooterPic{
-    height:5em;
-    position:center;
-    border-radius:5%;
+    font-style:none;
+    text-decoration:none;
+    list-style-type:none;
+    text-align:center;
+    font-size:1.2em;
 }
 #leftFooter input{
     font-style:none;

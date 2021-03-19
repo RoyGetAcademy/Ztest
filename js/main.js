@@ -34,6 +34,10 @@ function clickEvolutions()
     page="Evolutions";
     updateNow();
 }
+function clickDiscord()
+{
+    
+}
 function clickContact()
 {
     page="Contact";
@@ -104,7 +108,7 @@ Zhenis Evolutions started getting made january 2021.
                 <button id="newGame" onClick="newGame()">New Game</button>
                 <h3>Guess a number between 1 and 100</h3>
                 <div id="lowHigh"></div>
-                <input type="number" id="numberGuess" min="1" max="100" onchange="compareGuess()"></input>
+                <input type="number" id="numberGuess" min="1" max="100" onchange="compareGuess()" placeholder="Number Here"></input>
                 <p id="guessAnswer"> </p>
                 <p>Previous answers: </p>
                 <p id="previousAnswers"> </p>
@@ -136,7 +140,7 @@ Zhenis Evolutions started getting made january 2021.
             <h1>Contact</h1>
             <p>Navn:</p><input type="text"  id="navn"  placeholder= "Ditt navn"> </input><br>
             <p>Epost:</p> <input type="email" id="epost" placeholder= "Din Epost"> </input><br>
-            
+            <p>Message:</p> <textarea type="text" id="message" placeholder= "Beskjed til oss"></textarea><br>
             <button id="submit">Send</button>
         </div>
         `;
@@ -150,6 +154,7 @@ function resetColors()
     document.getElementById("game").style.color="teal";
     document.getElementById("evol").style.color="teal";
     document.getElementById("cont").style.color="teal";
+    document.getElementById("disc").style.color="teal"
 }
 //bytter når du har mus over knappen
 function mouseOver(that)
@@ -157,7 +162,7 @@ function mouseOver(that)
     if(that.innerHTML=="Home")document.getElementById("home").style.color="#07f5e2";
     if(that.innerHTML=="About")document.getElementById("abou").style.color="#07f5e2";
     if(that.innerHTML=="Games")document.getElementById("game").style.color="#07f5e2";
-    if(that.innerHTML=="Evolutions")document.getElementById("evol").style.color="#07f5e2";
+    if(that.innerHTML=="Discord")document.getElementById("disc").style.color="#07f5e2";
     if(that.innerHTML=="Contact")document.getElementById("cont").style.color="#07f5e2";
 }
 //når du tar vekk musen så bytter den farge hvis ikke den er valgt.
@@ -166,7 +171,7 @@ function mouseOut(that)
     if(that.innerHTML=="Home" && page!="Main")document.getElementById("home").style.color="teal";
     if(that.innerHTML=="About" && page!="About")document.getElementById("abou").style.color="teal";
     if(that.innerHTML=="Games" && page!="Games")document.getElementById("game").style.color="teal";
-    if(that.innerHTML=="Evolutions" && page!="Evolutions")document.getElementById("evol").style.color="teal";
+    if(that.innerHTML=="Discord" && page!="Discord")document.getElementById("disc").style.color="teal";
     if(that.innerHTML=="Contact" && page!="Contact")document.getElementById("cont").style.color="teal";
 }
 //Dette er til spillet Game1 som er tick tack toe.
@@ -174,54 +179,54 @@ function Clicked(that)
 {
     if(won==0)
     {
-        if(that.innerHTML!="O" && that.innerHTML!="X")
+        if(that.innerHTML!="R" && that.innerHTML!="T")
         {
             if(player==1)
             {
-                that.innerHTML="X";
+                that.innerHTML="R";
                 player=2;
                 document.getElementById("YouWon").innerHTML="Player 2's turn";
             }
             else{
-                that.innerHTML="O";
+                that.innerHTML="T";
                 player=1;
                 document.getElementById("YouWon").innerHTML="Player 1's turn";
             }
         }
         //Check if player 1 has won
-        if(document.getElementById("G11").innerHTML=="X" && document.getElementById("G12").innerHTML=="X" && document.getElementById("G13").innerHTML=="X")
+        if(document.getElementById("G11").innerHTML=="R" && document.getElementById("G12").innerHTML=="R" && document.getElementById("G13").innerHTML=="R")
         {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G11").innerHTML=="X" && document.getElementById("G21").innerHTML=="X" && document.getElementById("G31").innerHTML=="X")
+        else if(document.getElementById("G11").innerHTML=="R" && document.getElementById("G21").innerHTML=="R" && document.getElementById("G31").innerHTML=="R")
         {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G11").innerHTML=="X" && document.getElementById("G22").innerHTML=="X" && document.getElementById("G33").innerHTML=="X")
+        else if(document.getElementById("G11").innerHTML=="R" && document.getElementById("G22").innerHTML=="R" && document.getElementById("G33").innerHTML=="R")
         {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G12").innerHTML=="X" && document.getElementById("G22").innerHTML=="X" && document.getElementById("G32").innerHTML=="X")
+        else if(document.getElementById("G12").innerHTML=="R" && document.getElementById("G22").innerHTML=="R" && document.getElementById("G32").innerHTML=="R")
         {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G13").innerHTML=="X" && document.getElementById("G23").innerHTML=="X" && document.getElementById("G33").innerHTML=="X")
+        else if(document.getElementById("G13").innerHTML=="R" && document.getElementById("G23").innerHTML=="R" && document.getElementById("G33").innerHTML=="R")
         {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G21").innerHTML=="X" && document.getElementById("G22").innerHTML=="X" && document.getElementById("G23").innerHTML=="X")
+        else if(document.getElementById("G21").innerHTML=="R" && document.getElementById("G22").innerHTML=="R" && document.getElementById("G23").innerHTML=="R")
         {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G31").innerHTML=="X" && document.getElementById("G32").innerHTML=="X" && document.getElementById("G33").innerHTML=="X")
+        else if(document.getElementById("G31").innerHTML=="R" && document.getElementById("G32").innerHTML=="R" && document.getElementById("G33").innerHTML=="R")
         {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G31").innerHTML=="X" && document.getElementById("G22").innerHTML=="X" && document.getElementById("G13").innerHTML=="X")
+        else if(document.getElementById("G31").innerHTML=="R" && document.getElementById("G22").innerHTML=="R" && document.getElementById("G13").innerHTML=="R")
         {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
         //Check if player 2 has won
-        if(document.getElementById("G11").innerHTML=="O" && document.getElementById("G12").innerHTML=="O" && document.getElementById("G13").innerHTML=="O")
-        {document.getElementById("YouWon").innerHTML="player2 WON!!"; won=1; player2+=1;}
-        else if(document.getElementById("G11").innerHTML=="O" && document.getElementById("G21").innerHTML=="O" && document.getElementById("G31").innerHTML=="O")
-        {document.getElementById("YouWon").innerHTML="player2 WON!!"; won=1; player2+=1;}
-        else if(document.getElementById("G11").innerHTML=="O" && document.getElementById("G22").innerHTML=="O" && document.getElementById("G33").innerHTML=="O")
-        {document.getElementById("YouWon").innerHTML="player2 WON!!"; won=1; player2+=1;}
-        else if(document.getElementById("G12").innerHTML=="O" && document.getElementById("G22").innerHTML=="O" && document.getElementById("G32").innerHTML=="O")
-        {document.getElementById("YouWon").innerHTML="player2 WON!!"; won=1; player2+=1;}
-        else  if(document.getElementById("G13").innerHTML=="O" && document.getElementById("G23").innerHTML=="O" && document.getElementById("G33").innerHTML=="O")
-        {document.getElementById("YouWon").innerHTML="player2 WON!!"; won=1; player2+=1;}
-        else if(document.getElementById("G21").innerHTML=="O" && document.getElementById("G22").innerHTML=="O" && document.getElementById("G23").innerHTML=="O")
-        {document.getElementById("YouWon").innerHTML="player2 WON!!"; won=1; player2+=1;}
-        else if(document.getElementById("G31").innerHTML=="O" && document.getElementById("G32").innerHTML=="O" && document.getElementById("G33").innerHTML=="O")
-        {document.getElementById("YouWon").innerHTML="player2 WON!!"; won=1; player2+=1;}
-        else  if(document.getElementById("G31").innerHTML=="O" && document.getElementById("G22").innerHTML=="O" && document.getElementById("G13").innerHTML=="O")
-        {document.getElementById("YouWon").innerHTML="player2 WON!!"; won=1; player2+=1;}
+        if(document.getElementById("G11").innerHTML=="T" && document.getElementById("G12").innerHTML=="T" && document.getElementById("G13").innerHTML=="T")
+        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
+        else if(document.getElementById("G11").innerHTML=="T" && document.getElementById("G21").innerHTML=="T" && document.getElementById("G31").innerHTML=="T")
+        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
+        else if(document.getElementById("G11").innerHTML=="T" && document.getElementById("G22").innerHTML=="T" && document.getElementById("G33").innerHTML=="T")
+        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
+        else if(document.getElementById("G12").innerHTML=="T" && document.getElementById("G22").innerHTML=="T" && document.getElementById("G32").innerHTML=="T")
+        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
+        else  if(document.getElementById("G13").innerHTML=="T" && document.getElementById("G23").innerHTML=="T" && document.getElementById("G33").innerHTML=="T")
+        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
+        else if(document.getElementById("G21").innerHTML=="T" && document.getElementById("G22").innerHTML=="T" && document.getElementById("G23").innerHTML=="T")
+        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
+        else if(document.getElementById("G31").innerHTML=="T" && document.getElementById("G32").innerHTML=="T" && document.getElementById("G33").innerHTML=="T")
+        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
+        else  if(document.getElementById("G31").innerHTML=="T" && document.getElementById("G22").innerHTML=="T" && document.getElementById("G13").innerHTML=="T")
+        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
     }
 }
 //reset for Game1(Tick tack toe)
