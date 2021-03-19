@@ -37,7 +37,7 @@ body{
 }
 /*--------Bilder på header.------*/
 #headerImage{
-    height:450px;
+    width:50%;
     position:center;
 }
 /*--------List på venstre side med lenker.------*/
@@ -53,36 +53,24 @@ body{
     margin:0.2em;
 }
 
-#HovedMeny li a:hover{
-    color:#07f5e2;
-}
-#HeadLeftList{
-    position:absolute;
-}
-#HeadLeftList li a:hover{
-    color:#07f5e2;
-}
 /*--------HovedMeny------*/
-#HovedMeny li, #HovedMeny li a{
+ul{
+    display:inline-block;
+    list-style-type: none;
+    width:80%;
+    margin:1em auto;
+    padding:0;
+}
+li{
     display:inline;
-    font-style:none;
-    text-decoration:none;
-    list-style-type:none;
-    text-align:center;
-    color:teal;
+    width:25%;
+    font-family:'Times New Roman', Times, serif;
+    border-bottom:0.2rem solid #07f5e2;
     border-radius:25%;
-    font-size:1.2em;
+    margin:1rem;
 }
-#HovedMeny li a:hover{
-    color:#07f5e2;
-}
-#HovedMeny li{
-    border-bottom:0.2em solid #07f5e2;
-    padding:0.5em;
-    margin:1em;
-}
-#HovedMeny li a{
-    height:80%;
+li a{
+    font-size:1.5rem;
 }
 /*--------HovedOmrådet på skjermen..------*/
 #navn, #epost{
@@ -103,9 +91,6 @@ body{
     font-size:1.25em;
     border-radius: 20%;
 }
-
-
-
 
 /*--------HovedOmrådet på skjermen..------*/
 #main{
@@ -299,6 +284,10 @@ body{
     text-align:center;
     font-size:1.2em;
 }
+#rightFooter a{
+    display:block;
+    margin:1rem;
+}
 #leftFooter input{
     font-style:none;
     text-decoration:none;
@@ -319,4 +308,75 @@ body{
 }
 #YouWon{
     color:teal;
+}
+@media (max-width:1250px){
+    #left, #right{
+        width:80%;
+        float:none;
+        margin:1em auto;
+    }
+    .sideImg{
+        height:100%;
+        width:20%;
+    }
+    #footer{
+        margin:0 auto;
+    }
+    #leftFooter, #middleFooter, #rightFooter{
+        margin:0;
+        width:33%;
+    }
+}
+@media (max-width:1050px){
+    body, .wrapper{
+        width:100%;
+    }
+    .li{
+        width:20%;
+        float:none;
+        margin:1em auto;
+    }
+    footer{
+        width:80%;
+    }
+    #leftFooter, #middleFooter, #rightFooter{
+        display:inline-block;
+        position:none;
+        width:45%;
+        float:none;
+        margin:1em auto;
+    }
+    #leftFooter{
+        float:left;
+    }
+    #rightFooter{
+        float:right;
+    }
+    #middleFooter{
+        width:100%;
+        margin:-5rem auto;
+    }
+    #ImgLeft, #ImgRight{
+        display:none;
+    }
+}
+@media (max-width:700px){
+    .li{
+        width:20%;
+        float:none;
+        margin:5rem auto;
+    }
+    footer{
+        width:80%;
+    }
+    #leftFooter, #middleFooter, #rightFooter{
+        display:block;
+        position:none;
+        width:65%;
+        float:none;
+        margin:1em auto;
+    }
+    #middleFooter{
+        margin:-5rem auto;
+    }
 }

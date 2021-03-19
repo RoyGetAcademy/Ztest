@@ -60,6 +60,8 @@ function updateNow()
             <p>Zhenis Evolutions</p>
         </div>
         `;
+        document.getElementById("ImgLeft").style.height="100%";
+        document.getElementById("ImgRight").style.height="100%";
     }
     else if(page=="About")
     {
@@ -79,6 +81,8 @@ Zhenis Evolutions started getting made january 2021.
 </pre>
         </div>
         `;
+        document.getElementById("ImgLeft").style.height="100%";
+        document.getElementById("ImgRight").style.height="100%";
     }
     else if(page=="Games")
     {
@@ -118,6 +122,8 @@ Zhenis Evolutions started getting made january 2021.
         </div>
         `;
         newGame();
+        document.getElementById("ImgLeft").style.height="100%";
+        document.getElementById("ImgRight").style.height="100%";
     }
     else if(page=="Evolutions")
     {
@@ -132,6 +138,8 @@ Zhenis Evolutions started getting made january 2021.
             <p>Info comming soon to a place near you!!</p>
         </div>
         `;
+        document.getElementById("ImgLeft").style.height="100%";
+        document.getElementById("ImgRight").style.height="100%";
     }
     else if(page=="Contact")
     {
@@ -146,6 +154,8 @@ Zhenis Evolutions started getting made january 2021.
             <button id="submit">Send</button>
         </div>
         `;
+        document.getElementById("ImgLeft").style.height="100%";
+        document.getElementById("ImgRight").style.height="100%";
     }
 }
 //Denne er til og resete knappene på header menyer
