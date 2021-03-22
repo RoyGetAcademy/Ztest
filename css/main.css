@@ -8,6 +8,11 @@ h1{
 }
 p{
     font-size:1.2rem;
+    margin:0.5rem 4rem;
+}
+
+#AboutInfo{
+    text-align:center;
 }
 /*--------Wrapper dekker alt.------*/
 .wrapper{
@@ -220,9 +225,7 @@ li a{
 }
 
 /*--------Spesifikt for andre sider..------*/
-#one p{
-    margin:0.2em;
-}
+
 #one input, #one textarea, #one select, #one button{
     outline:none;
     border:none;

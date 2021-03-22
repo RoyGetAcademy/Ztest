@@ -67,17 +67,12 @@ function updateNow()
         resetColors();
         document.getElementById("abou").style.color="#07f5e2";
         document.getElementById("main").innerHTML=`
-        <div id="one">
-<h3><u>About us:</u></h3>        
-<pre>
-I am a Norwegian dude who likes to geek it out.
-I program games, websites & I am a gamer.
-
-Zhenis Technologies started december of 2020.
-
-Zhenis Evolutions started getting made january 2021.
-            
-</pre>
+        <div id="one" >
+        <h3 class="AboutInfo"><u>About us:</u></h3>        
+        <p class="AboutInfo">I am a Norwegian dude who likes to geek it out.</p>
+        <p class="AboutInfo">I program games, websites & I am a gamer.</p>
+        <p class="AboutInfo">Zhenis Technologies started december of 2020.</p>
+        <p class="AboutInfo">Zhenis Evolutions started getting made january 2021.</p>
         </div>
         `;
         document.getElementById("ImgLeft").style.height="100%";
@@ -111,7 +106,7 @@ Zhenis Evolutions started getting made january 2021.
                 <button id="newGame" onClick="newGame()">New Game</button>
                 <h3>Guess a number between 1 and 100</h3>
                 <div id="lowHigh"></div>
-                <input type="number" id="numberGuess" min="1" max="100" onchange="compareGuess()" placeholder="Number Here"></input>
+                <input type="text" id="numberGuess" min="1" max="100" onchange="compareGuess()" placeholder="Number Here"></input>
                 <p id="guessAnswer"> </p>
                 <p>Previous answers: </p>
                 <p id="previousAnswers"> </p>
