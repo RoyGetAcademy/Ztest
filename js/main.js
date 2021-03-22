@@ -294,4 +294,6 @@ function newGame()
     document.getElementById("Guesses").innerHTML="";
     document.getElementById("lowHigh").innerHTML="";
     document.getElementById("numberGuess").value="";
+    low=1;
+    high=100;
 }
