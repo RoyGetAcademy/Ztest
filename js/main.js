@@ -152,7 +152,14 @@ function updateNow()
         document.getElementById("ImgRight").style.height="100%";
     }
 }
-//Denne er til og resete knappene på header menyer
+
+//IKKE LENGER MVC!! IKKE LENGER MVC!! IKKE LENGER MVC!!
+//IKKE LENGER MVC!! IKKE LENGER MVC!! IKKE LENGER MVC!!
+//IKKE LENGER MVC!! IKKE LENGER MVC!! IKKE LENGER MVC!!
+//IKKE LENGER MVC!! IKKE LENGER MVC!! IKKE LENGER MVC!!
+//IKKE LENGER MVC!! IKKE LENGER MVC!! IKKE LENGER MVC!!
+
+//Denne er til og resete knappene på header menyer (Utenfor MVC)
 function resetColors()
 {
     document.getElementById("home").style.color="teal";
@@ -162,7 +169,7 @@ function resetColors()
     document.getElementById("cont").style.color="teal";
     document.getElementById("disc").style.color="teal";
 }
-//bytter når du har mus over knappen
+//bytter når du har mus over knappen (Utenfor MVC)
 function mouseOver(that)
 {
     if(that.innerHTML=="Home")document.getElementById("home").style.color="#07f5e2";
@@ -172,7 +179,7 @@ function mouseOver(that)
     if(that.innerHTML=="Contact")document.getElementById("cont").style.color="#07f5e2";
     if(that.innerHTML=="Evolutions")document.getElementById("evol").style.color="#07f5e2";
 }
-//når du tar vekk musen så bytter den farge hvis ikke den er valgt.
+//når du tar vekk musen så bytter den farge hvis ikke den er valgt. (Utenfor MVC)
 function mouseOut(that)
 {
     if(that.innerHTML=="Home" && page!="Main")document.getElementById("home").style.color="teal";
@@ -182,7 +189,7 @@ function mouseOut(that)
     if(that.innerHTML=="Contact" && page!="Contact")document.getElementById("cont").style.color="teal";
     if(that.innerHTML=="Evolutions" && page!="Evolutions")document.getElementById("evol").style.color="teal";
 }
-//Dette er til spillet Game1 som er tick tack toe.
+//Dette er til spillet Game1 som er tick tack toe. (Utenfor MVC)
 function Clicked(that)
 {
     if(won==0)
@@ -237,7 +244,7 @@ function Clicked(that)
         {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
     }
 }
-//reset for Game1(Tick tack toe)
+//reset for Game1(Tick tack toe) (Utenfor MVC)
 function resetGame1()
 {
     document.getElementById("G11").innerHTML=".";
@@ -253,7 +260,7 @@ function resetGame1()
     won=0;
 }
 
-//Game2
+//Game2 (Utenfor MVC)
 function compareGuess()
 {
     guessNumber=Number(document.getElementById("numberGuess").value)
@@ -285,7 +292,7 @@ function compareGuess()
         document.getElementById("lowHigh").innerHTML="Number is between "+low+" and "+high;
     }
 }
-function newGame()
+function newGame()(Utenfor MVC)
 {
     computerNumber=Math.floor(Math.random() *100+1);
     document.getElementById("guessAnswer").innerHTML=""
