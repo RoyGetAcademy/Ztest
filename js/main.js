@@ -4,12 +4,19 @@ var player = 1;
 var player1 = 0;
 var player2 = 0;
 var won = 0;
+var boxes=["","","","","","","","",""]
+var winner="";
 
 var computerNumber;
 var guessNumber;
 var guesses=0;
 var low=0;
 var high=100;
+var guessAnswer="";
+var previousAnswer="";
+var numberGuess="";
+var GuessesStr="";
+var lowHigh="";
 
 updateNow();
 //Controller
@@ -26,6 +33,7 @@ function clickAbout()
 function clickGames()
 {
     page="Games";
+    newGame();
     updateNow();
 }
 function clickEvolutions()
@@ -59,8 +67,6 @@ function updateNow()
             <p>Zhenis Evolutions</p>
         </div>
         `;
-        document.getElementById("ImgLeft").style.height="100%";
-        document.getElementById("ImgRight").style.height="100%";
     }
     else if(page=="About")
     {
@@ -75,8 +81,6 @@ function updateNow()
         <p class="AboutInfo">Zhenis Evolutions started getting made january 2021.</p>
         </div>
         `;
-        document.getElementById("ImgLeft").style.height="100%";
-        document.getElementById("ImgRight").style.height="100%";
     }
     else if(page=="Games")
     {
@@ -89,35 +93,33 @@ function updateNow()
         </div>    
         <div id="Reset" onClick="resetGame1()">Reset</div>
         <div></div>
-        <p id="YouWon"></p>
+        <p id="YouWon">${winner}</p>
         <div id="game1Main">
-            <div id="G11" class="Color1" onClick="Clicked(this)">.</div>
-            <div id="G12" class="Color2" onClick="Clicked(this)">.</div>
-            <div id="G13" class="Color1" onClick="Clicked(this)">.</div>
-            <div id="G21" class="Color2" onClick="Clicked(this)">.</div>
-            <div id="G22" class="Color1" onClick="Clicked(this)">.</div>
-            <div id="G23" class="Color2" onClick="Clicked(this)">.</div>
-            <div id="G31" class="Color1" onClick="Clicked(this)">.</div>
-            <div id="G32" class="Color2" onClick="Clicked(this)">.</div>
-            <div id="G33" class="Color1" onClick="Clicked(this)">.</div>
+            <div class="Color1" onClick="Clicked(0)">${boxes[0]}</div>
+            <div class="Color2" onClick="Clicked(1)">${boxes[1]}</div>
+            <div class="Color1" onClick="Clicked(2)">${boxes[2]}</div>
+
+            <div class="Color2" onClick="Clicked(3)">${boxes[3]}</div>
+            <div class="Color1" onClick="Clicked(4)">${boxes[4]}</div>
+            <div class="Color2" onClick="Clicked(5)">${boxes[5]}</div>
+
+            <div class="Color1" onClick="Clicked(6)">${boxes[6]}</div>
+            <div class="Color2" onClick="Clicked(7)">${boxes[7]}</div>
+            <div class="Color1" onClick="Clicked(8)">${boxes[8]}</div>
         </div>
         <div id="game2Main">
             <div id="GuessBack">
                 <button id="newGame" onClick="newGame()">New Game</button>
                 <h3>Guess a number between 1 and 100</h3>
-                <div id="lowHigh"></div>
-                <input type="text" id="numberGuess" min="1" max="100" onchange="compareGuess()" placeholder="Number Here"></input>
-                <p id="guessAnswer"> </p>
+                <div>${lowHigh}</div>
+                <input id="Numerics" type="text" min="1" max="100" onchange="compareGuess(this)" placeholder="Number Here">${numberGuess}</input>
+                <p>${guessAnswer}</p>
                 <p>Previous answers: </p>
-                <p id="previousAnswers"> </p>
-                <p id="Guesses"> </p>
-                
+                <p>${previousAnswer}</p>
+                <p>${GuessesStr}</p>
             </div>
         </div>
         `;
-        newGame();
-        document.getElementById("ImgLeft").style.height="100%";
-        document.getElementById("ImgRight").style.height="100%";
     }
     else if(page=="Evolutions")
     {
@@ -132,8 +134,6 @@ function updateNow()
             <p>Info comming soon to a place near you!!</p>
         </div>
         `;
-        document.getElementById("ImgLeft").style.height="100%";
-        document.getElementById("ImgRight").style.height="100%";
     }
     else if(page=="Contact")
     {
@@ -148,10 +148,98 @@ function updateNow()
             <button id="submit">Send</button>
         </div>
         `;
-        document.getElementById("ImgLeft").style.height="100%";
-        document.getElementById("ImgRight").style.height="100%";
     }
 }
+
+//Dette er til spillet Game1 som er tick tack toe.
+function Clicked(that)
+{
+    if(won==0)
+    {
+        if(boxes[that] != "R" && boxes[that] != "T")
+        {
+            if(player==1)
+            {
+                boxes[that]="R";
+                player=2;
+                winner="Player 2's turn";
+            }
+            else{
+                boxes[that]="T";
+                player=1;
+                winner="Player 1's turn";
+            }
+        }
+        //Check if player 1 has won
+        if   ((boxes[0]=="R" && boxes[1]=="R" && boxes[2]=="R") || (boxes[0]=="R" && boxes[3]=="R" && boxes[6]=="R")
+            ||(boxes[0]=="R" && boxes[4]=="R" && boxes[8]=="R") || (boxes[3]=="R" && boxes[4]=="R" && boxes[5]=="R")
+            ||(boxes[6]=="R" && boxes[7]=="R" && boxes[8]=="R") || (boxes[2]=="R" && boxes[4]=="R" && boxes[6]=="R")
+            ||(boxes[0]=="R" && boxes[4]=="R" && boxes[8]=="R") || (boxes[1]=="R" && boxes[4]=="R" && boxes[7]=="R")
+            ||(boxes[2]=="R" && boxes[5]=="R" && boxes[8]=="R")){winner="Player1 WON!!"; won=1; player1+=1;}
+        //Check if player 2 has won
+        if   ((boxes[0]=="T" && boxes[1]=="T" && boxes[2]=="T") || (boxes[0]=="T" && boxes[3]=="T" && boxes[6]=="T")
+            ||(boxes[0]=="T" && boxes[4]=="T" && boxes[8]=="T") || (boxes[3]=="T" && boxes[4]=="T" && boxes[5]=="T")
+            ||(boxes[6]=="T" && boxes[7]=="T" && boxes[8]=="T") || (boxes[2]=="T" && boxes[4]=="T" && boxes[6]=="T")
+            ||(boxes[0]=="T" && boxes[4]=="T" && boxes[8]=="T") || (boxes[1]=="T" && boxes[4]=="T" && boxes[7]=="T")
+            ||(boxes[2]=="T" && boxes[5]=="T" && boxes[8]=="T")){winner="Player2 WON!!"; won=1; player2+=1;}
+        updateNow();
+    }
+}
+//reset for Game1(Tick tack toe)
+function resetGame1()
+{
+    boxes=["","","","","","","","",""];
+    winner="Player1 wins: "+player1+" - Player2 wins: "+player2;
+    won=0;
+    updateNow();
+}
+//Game2
+function compareGuess(that)
+{
+    guessNumber=Number(that.value)
+    if(guessNumber == computerNumber)
+    {
+        guesses++;
+        previousAnswer="";
+        GuessesStr="";
+        guessAnswer="You Won with "+ guesses +" guesses";
+    }
+    else if(guessNumber<computerNumber)
+    {
+        guesses++;
+        if(guessNumber>low)low=guessNumber;
+        guessAnswer="Number is to low"
+        previousAnswer+="-"+guessNumber;
+        numberGuess="";
+        GuessesStr="You have used: "+guesses+" guesses.";
+        lowHigh="Number is between "+low+" and "+high;
+    }
+    else
+    {
+        guesses++;
+        if(guessNumber<high)high=guessNumber;
+        guessAnswer="Number is to high"
+        previousAnswer+="-"+guessNumber;
+        numberGuess="";
+        GuessesStr="You have used: "+guesses+" guesses.";
+        lowHigh="Number is between "+low+" and "+high;
+    }
+    updateNow();
+}
+function newGame()
+{
+    computerNumber=Math.floor(Math.random() *100+1);
+    guessAnswer=""
+    previousAnswer="";
+    guesses=0;
+    GuessesStr="";
+    lowHigh="";
+    numberGuess="";
+    low=1;
+    high=100;
+    updateNow();
+}
+
 
 //IKKE LENGER MVC!! IKKE LENGER MVC!! IKKE LENGER MVC!!
 //IKKE LENGER MVC!! IKKE LENGER MVC!! IKKE LENGER MVC!!
@@ -189,118 +277,4 @@ function mouseOut(that)
     if(that.innerHTML=="Contact" && page!="Contact")document.getElementById("cont").style.color="teal";
     if(that.innerHTML=="Evolutions" && page!="Evolutions")document.getElementById("evol").style.color="teal";
 }
-//Dette er til spillet Game1 som er tick tack toe. (Utenfor MVC)
-function Clicked(that)
-{
-    if(won==0)
-    {
-        if(that.innerHTML!="R" && that.innerHTML!="T")
-        {
-            if(player==1)
-            {
-                that.innerHTML="R";
-                player=2;
-                document.getElementById("YouWon").innerHTML="Player 2's turn";
-            }
-            else{
-                that.innerHTML="T";
-                player=1;
-                document.getElementById("YouWon").innerHTML="Player 1's turn";
-            }
-        }
-        //Check if player 1 has won
-        if(document.getElementById("G11").innerHTML=="R" && document.getElementById("G12").innerHTML=="R" && document.getElementById("G13").innerHTML=="R")
-        {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G11").innerHTML=="R" && document.getElementById("G21").innerHTML=="R" && document.getElementById("G31").innerHTML=="R")
-        {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G11").innerHTML=="R" && document.getElementById("G22").innerHTML=="R" && document.getElementById("G33").innerHTML=="R")
-        {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G12").innerHTML=="R" && document.getElementById("G22").innerHTML=="R" && document.getElementById("G32").innerHTML=="R")
-        {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G13").innerHTML=="R" && document.getElementById("G23").innerHTML=="R" && document.getElementById("G33").innerHTML=="R")
-        {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G21").innerHTML=="R" && document.getElementById("G22").innerHTML=="R" && document.getElementById("G23").innerHTML=="R")
-        {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G31").innerHTML=="R" && document.getElementById("G32").innerHTML=="R" && document.getElementById("G33").innerHTML=="R")
-        {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        else if(document.getElementById("G31").innerHTML=="R" && document.getElementById("G22").innerHTML=="R" && document.getElementById("G13").innerHTML=="R")
-        {document.getElementById("YouWon").innerHTML="Player1 WON!!"; won=1; player1+=1;}
-        //Check if player 2 has won
-        if(document.getElementById("G11").innerHTML=="T" && document.getElementById("G12").innerHTML=="T" && document.getElementById("G13").innerHTML=="T")
-        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
-        else if(document.getElementById("G11").innerHTML=="T" && document.getElementById("G21").innerHTML=="T" && document.getElementById("G31").innerHTML=="T")
-        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
-        else if(document.getElementById("G11").innerHTML=="T" && document.getElementById("G22").innerHTML=="T" && document.getElementById("G33").innerHTML=="T")
-        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
-        else if(document.getElementById("G12").innerHTML=="T" && document.getElementById("G22").innerHTML=="T" && document.getElementById("G32").innerHTML=="T")
-        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
-        else  if(document.getElementById("G13").innerHTML=="T" && document.getElementById("G23").innerHTML=="T" && document.getElementById("G33").innerHTML=="T")
-        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
-        else if(document.getElementById("G21").innerHTML=="T" && document.getElementById("G22").innerHTML=="T" && document.getElementById("G23").innerHTML=="T")
-        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
-        else if(document.getElementById("G31").innerHTML=="T" && document.getElementById("G32").innerHTML=="T" && document.getElementById("G33").innerHTML=="T")
-        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
-        else  if(document.getElementById("G31").innerHTML=="T" && document.getElementById("G22").innerHTML=="T" && document.getElementById("G13").innerHTML=="T")
-        {document.getElementById("YouWon").innerHTML="Player2 WON!!"; won=1; player2+=1;}
-    }
-}
-//reset for Game1(Tick tack toe) (Utenfor MVC)
-function resetGame1()
-{
-    document.getElementById("G11").innerHTML=".";
-    document.getElementById("G12").innerHTML=".";
-    document.getElementById("G13").innerHTML=".";
-    document.getElementById("G21").innerHTML=".";
-    document.getElementById("G22").innerHTML=".";
-    document.getElementById("G23").innerHTML=".";
-    document.getElementById("G31").innerHTML=".";
-    document.getElementById("G32").innerHTML=".";
-    document.getElementById("G33").innerHTML=".";
-    document.getElementById("YouWon").innerHTML="Player1 wins: "+player1+" - Player2 wins: "+player2;
-    won=0;
-}
 
-//Game2 (Utenfor MVC)
-function compareGuess()
-{
-    guessNumber=Number(document.getElementById("numberGuess").value)
-    if(guessNumber==computerNumber)
-    {
-        guesses++;
-        document.getElementById("previousAnswers").innerHTML="";
-        document.getElementById("Guesses").innerHTML="";
-        document.getElementById("guessAnswer").innerHTML="You Won with "+guesses+" guesses";
-    }
-    else if(guessNumber<computerNumber)
-    {
-        guesses++;
-        if(guessNumber>low)low=guessNumber;
-        document.getElementById("guessAnswer").innerHTML="Number is to low"
-        document.getElementById("previousAnswers").innerHTML+="-"+guessNumber;
-        document.getElementById("numberGuess").value="";
-        document.getElementById("Guesses").innerHTML="You have used: "+guesses+" guesses.";
-        document.getElementById("lowHigh").innerHTML="Number is between "+low+" and "+high;
-    }
-    else
-    {
-        guesses++;
-        if(guessNumber<high)high=guessNumber;
-        document.getElementById("guessAnswer").innerHTML="Number is to high"
-        document.getElementById("previousAnswers").innerHTML+="-"+guessNumber;
-        document.getElementById("numberGuess").value="";
-        document.getElementById("Guesses").innerHTML="You have used: "+guesses+" guesses.";
-        document.getElementById("lowHigh").innerHTML="Number is between "+low+" and "+high;
-    }
-}
-function newGame()(Utenfor MVC)
-{
-    computerNumber=Math.floor(Math.random() *100+1);
-    document.getElementById("guessAnswer").innerHTML=""
-    document.getElementById("previousAnswers").innerHTML="";
-    guesses=0;
-    document.getElementById("Guesses").innerHTML="";
-    document.getElementById("lowHigh").innerHTML="";
-    document.getElementById("numberGuess").value="";
-    low=1;
-    high=100;
-}
